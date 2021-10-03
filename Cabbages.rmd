@@ -51,12 +51,19 @@ This boxplot shows that the cabbages cultivated with method c39 have less vitami
 ```{r}
 favstats(VitC~Cult,data=veggy)
 ```
-52 produces more vitamin c
+
+This data in this table shows that the average content of vitamin C cultivated with method c39 is 52 and the average vitamin C content cultivated with method c52 is 64.
+
 ## Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
-
+```{r}
+t.test(VitC~Cult,data=veggy)
+```
+ 
+The p value is 0.00000003405 which is smaller than 0.05. There is a difference between the vitamin C content of cabbages cultivated with methods c52 and c39.
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variables causes the other, or whether they perhaps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+The original question states: is there a difference in the vitamin C content of cabbages based on whether they were cultivated with methods c52 or c39? The boxplots show that there is a difference in the vitamin C content of cabbages taking into account the two different cultivation methods. The numerical summary shows that the difference of cultivation method c52 resulted in 13 more IUs. According to data and the boxplots the p value of 0.00000003405 is a very small number. This indicates that if the null hypothesis were true then the likelihood of getting the result we found is so small that I reject the null hypothesis.
