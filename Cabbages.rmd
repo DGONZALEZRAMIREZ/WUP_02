@@ -21,6 +21,10 @@ veggy <- cabbages
  
 ### Is there a difference in average VitC between c39 and c52 cultivation methods?  
 
+$H_0$: There is no difference in the amount of Vitamin C content of cabbages cultivated with methods c39 and c52.
+
+$H_A$: There is a difference in the amount of Vitamin C content based on cultivation method.
+
 # Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
@@ -36,21 +40,10 @@ VitC is a numerical variable and Cult is a categorical variable. Because of this
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 ```{r}
-basicCN <- ggplot(veggy,aes(x=Cult,y=VitC))
+boxplot(VitC~Cult,data=veggy)
 ```
-## Now add in boxplot
 
-```{r}
-basicCN + geom_boxplot()
-```
-  
-  
-### get fancy  
-
-```{r}
-basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
-```
-Explain the boxes
+This boxplot shows that the cabbages cultivated with method c39 have less vitamin C content than those cultivated with method c52. The bottom of the barrel that contains vitamin C cultivated with the c52 method is above the barrel for the cabbages cultivated with the c39 content.
 
 ### Numerical Descriptive Results
 
